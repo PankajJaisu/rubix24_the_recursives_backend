@@ -21,3 +21,9 @@ def talk(request):
                             })
     print(response.text)
     return JsonResponse({"response":"hello"})
+
+
+@api_view(['POST'])
+def my_webhook(request):
+    print("Request data::",request.data)
+    return JsonResponse({"message":"hello"})
